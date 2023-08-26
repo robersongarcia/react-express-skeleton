@@ -22,6 +22,10 @@ export class Server {
     }
 
     listen() {
+        ViteExpress.config({            
+            // eslint-disable-next-line no-undef
+            mode: process.env.NODE_ENV || 'development',
+        })
         ViteExpress.listen(this.app, this.port, () => console.log(`Server is listening on port: ${this.port}...`))        
     }
 }
